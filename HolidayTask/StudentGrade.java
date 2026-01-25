@@ -25,14 +25,15 @@ for(int count = 0; count < studentNumber; count++){
      
   for(int index = 0; index < subjectNumber; index++){
     
-    int subj = index + 1;
+    int subject = index + 1;
     System.out.println("Entering score for student " + number);
-     System.out.print("Enter score for subject " + subj + " : ");
+     System.out.print("Enter score for subject " + subject + " : ");
     
      int subjectScore = input.nextInt();
         if (subjectScore < 0 || subjectScore > 100) {
-        System.out.println("Out of scoring range, Score must be between 0 and 100.");
-        break;
+        System.out.println("Invalid input, Score must be between 1 and 100.");
+        subjectScore = input.nextInt();
+       
     }
      scores[count][index] = subjectScore;
         
@@ -89,8 +90,8 @@ System.out.println(Arrays.toString(position) + "position array ");
 System.out.println("================================================================================================");
 System.out.printf("%-12s", "STUDENT");
 
-for (int i = 1; i <= subjectNumber; i++) {
-    System.out.printf("%6s", "SUB" + i);
+for (int count = 1; count <= subjectNumber; count++) {
+    System.out.printf("%6s", "SUB" + count);
 }
 
 System.out.printf("%8s %10s %10s%n", "TOTAL", "AVERAGE", "POSITION");
@@ -107,12 +108,12 @@ for (int index = 0; index < studentNumber; index++) {
         System.out.printf("%6d", scores[index][count]);
     }
 
-    System.out.printf(
-        "%8d %10.1f %10d%n",
-        subjectTotal[index],
-        average[index],
-        position[index]
-    );
+System.out.printf("%8d %10.1f %10d%n", subjectTotal[index],average[index],position[index]);
+       
+       
+        
+        
+   
 }
 
 

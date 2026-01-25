@@ -1,25 +1,39 @@
 public class KataTask{
+    public static void main(String...args){
+int number = 4;
+boolean evenNum = (even(number));
+System.out.println(evenNum);
+boolean primeNumber = (primeNumber(number));
+int number = 5;
+System.out.println(primeNumber);
 
 
-public static boolean even(int number){
+}
+    public static boolean even(int number){
 
     if(number % 2 == 0){
     return true;
     }
     else{
     return false;
-     }
+            }
+        }
     }
+
   
 
 
-public static boolean primeNumber(int number){ 
- if(number % number == 0){
-    return true;
-    }
-    else{
-    return false;
+ public static boolean primeNumber(int number) {
+        if (number <= 1) {
+            return false;
         }
+
+        for (int count = 2; count * count <= number; count++) {
+            if (number % count == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 
