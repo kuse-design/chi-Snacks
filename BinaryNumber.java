@@ -11,7 +11,7 @@ public class BinaryNumber{
 }
 
 
-public static String convertNumber(int number, int baseNumber){
+public static String convertNumber(int number, int baseOne){
       String result = "";
 
       while (number > 0) {
@@ -23,6 +23,15 @@ public static String convertNumber(int number, int baseNumber){
     }
 }
 
+    public static int convertBack(String number, int baseTwo) {
+    int result = 0;
+
+    for (int count = 0; count < number.length(); count++) {
+        convertBackResult = result * base + (number.charAt(count) - '0');
+    }
+
+    return convertBackResult;
+}
 
     
 
